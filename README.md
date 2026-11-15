@@ -2,7 +2,7 @@
 
 A single-page real-time chat application built with React, Vite, Tailwind CSS, and an Express + Socket.IO server.
 
-![Team Chat Application Preview](assets/team-chat-intro.gif)
+![Team Chat Application Preview](assets/chat-app-preview.png)
 
 ---
 
