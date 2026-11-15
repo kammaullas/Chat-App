@@ -6,14 +6,17 @@ let socket = null;
 
 export function getSocket() {
   if (!socket) {
+    if (typeof window !== 'undefined') {
+      console.log('[Socket] Connecting to backend at:', SOCKET_URL);
+    }
     socket = io(SOCKET_URL, {
       transports: ['websocket', 'polling'],
       autoConnect: true,
       reconnection: true,
-      reconnectionAttempts: 10,
+      reconnectionAttempts: Infinity,
       reconnectionDelay: 1000,
       reconnectionDelayMax: 5000,
-      timeout: 5000
+      timeout: 10000
     });
   }
   return socket;
